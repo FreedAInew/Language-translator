@@ -1,0 +1,258 @@
+/* ================== GENERAL STYLES ================== */
+* {
+    box-sizing: border-box; /* Prevents issues with padding and width */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures full screen height */
+    background-color: #000;
+    color: #ddd;
+    padding: 10px; /* Small padding for mobile */
+}
+
+/* ================== HEADER ================== */
+.header {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem); /* Dynamic font size adjustment */
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(45deg, #4a90e2, #8e44ad);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+/* Small description */
+.description {
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* Adaptive size */
+    font-weight: 500;
+    color: #e7e6e6; /* Softer gray */
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: 100%; /* Occupies full available width */
+    max-width: 600px; /* Prevents excessive width */
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* ================== MAIN CONTAINER ================== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 95%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* ================== INPUT AND OUTPUT BOXES ================== */
+.item {
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
+    width: 100%; /* Full width on mobile */
+    max-width: 500px; /* Max size on desktop */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ================== TEXTAREAS ================== */
+textarea {
+    width: 100%;
+    height: clamp(100px, 10vh, 150px); /* Dynamic height adjustment */
+    resize: none;
+    max-height: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#textoEntrada, #resultado {
+    width: 100%;
+    min-height: 150px;
+    max-height: 600px;
+    overflow: hidden; /* Prevents scrollbars */
+    resize: none; /* Disables manual resizing */
+}
+
+/* Always visible text on top */
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #0ff;
+    border-radius: 10px;
+}
+
+/* Color adjustments for each area */
+.input-box textarea {
+    background-color: #222;
+    color: #0ff;
+    border: 1px solid #0ff;
+}
+
+.output-box textarea {
+    background-color: #222;
+    color: #ff0;
+    border: 1px solid #ff0;
+}
+
+/* ================== TRANSLATE BUTTON ================== */
+.button-container {
+    text-align: center;
+}
+
+#traducirBtn {
+    padding: 12px 25px;
+    background: #0ff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 15px #0ff;
+    transition: 0.3s;
+    width: clamp(150px, 40%, 250px); /* Dynamic size adjustment */
+}
+
+#traducirBtn:hover {
+    background: #ff0;
+    box-shadow: 0 0 20px #ff0;
+}
+
+#traducirBtn:active {
+    background: #f00;
+    box-shadow: 0 0 25px #f00;
+    transform: scale(0.95);
+}
+
+/* ================== FOOTER ================== */
+.footer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+    text-align: center;
+    background: #111;
+    box-shadow: 0 -4px 10px rgba(0, 255, 255, 0.5);
+    margin-top: auto; /* Pushes it down */
+}
+
+.footer p {
+    margin: 0;
+    color: #0ff;
+    font-weight: bold;
+}
+
+/* Styles for titles and labels */
+h2, label {
+    color: #dcdcdc;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+/* Styles for select elements */
+select {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+option {
+    background-color: #222;
+    color: #000;
+}
+
+/* ================== RESPONSIVE MEDIA QUERIES ================== */
+
+/* 🟢 Small screens (Mobile) */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 90%;
+    }
+
+    #traducirBtn {
+        width: 80%;
+    }
+}
+
+/* 🟠 Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        justify-content: space-around;
+    }
+
+    .item {
+        width: 48%;
+    }
+}
+
+/* 🔵 Large screens (Laptops & Desktops) */
+@media (min-width: 901px) {
+    .container {
+        justify-content: center;
+    }
+
+    .item {
+        width: 45%;
+    }
+}
+
+/* Floating Translate Button */
+#traducirFlotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0ff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px #0ff;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+
+/* Show floating button */
+.mostrar {
+    display: block !important;
+}
+
+/* Hide normal button */
+.ocultar {
+    display: none !important;
+}

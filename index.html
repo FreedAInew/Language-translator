@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Loops Translator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Magic Root Translator 🌐</h1>
+        <p class="description">Easily translate texts between multiple languages (only 5).</p>
+    </header>
+
+    <div class="container">
+        <!-- Input box -->
+        <div class="item input-box">
+            <h2>Text to Translate</h2>
+            <textarea id="textoEntrada" placeholder="Write your text here..."></textarea>
+            <div class="language-selection">
+                <label for="idiomaOrigen">Language:</label>
+                <select id="idiomaOrigen">
+                    <option value="es">Spanish</option>
+                    <option value="en" selected>English</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ko">Korean</option>
+                    <option value="ja">Japanese</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Output box -->
+        <div class="item output-box">
+            <h2>Translated Text</h2>
+            <textarea id="resultado" readonly placeholder="The translation will appear here..."></textarea>
+            <div class="language-selection">
+                <label for="idiomaDestino">Translated Language:</label>
+                <select id="idiomaDestino">
+                    <option value="es">Spanish</option>
+                    <option value="en">English</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ko">Korean</option>
+                    <option value="ja">Japanese</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separate translate button -->
+    <div class="button-container">
+        <button id="traducirBtn" onclick="translateText()">Translate</button>
+    </div>
+
+    <!-- Hidden floating button -->
+    <button id="traducirFlotante" class="oculto" onclick="translateText()">Translate</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Translator - All rights reserved.</p>
+    </footer>
+</body>
+</html>
