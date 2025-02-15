@@ -91,7 +91,6 @@ textarea {
     width: 100%;
     min-height: 150px;
     max-height: 600px;
-    /* Prevents scrollbars overflow: hidden; */
     resize: none;/* Disables manual resizing */
 }
 
